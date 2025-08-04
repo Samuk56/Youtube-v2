@@ -1,3 +1,16 @@
+body{
+    background-color: black;
+    color: white;
+}
 header{
-    background-color: darkgray;
+    background-color: rgb(107, 106, 106);
+    width: 80;
+}
+h1{
+     background-color: rgb(107, 106, 106);
+     width: 540;
+}
+.t{
+ background-color: rgb(107, 106, 106);
+ width: 130;
 }
