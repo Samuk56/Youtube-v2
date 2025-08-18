@@ -1,16 +1,102 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-1: #0c0d0f;
+  --bg-2: #16181d;
+  --text: #e8edf3;
+  --muted: #a7b0ba;
+  --card: rgba(255,255,255,0.05);
+  --stroke: rgba(255,255,255,0.12);
+  --glow: rgba(0,0,0,0.55);
+}
+
+html, body {
+  height: 100%;
+}
+
 body{
-    background-color: black;
-    color: white;
+  margin: 0;
+  color: var(--text);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, #1b1f26 0%, var(--bg-1) 60%),
+    linear-gradient(180deg, var(--bg-1), var(--bg-2));
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans";
+  line-height: 1.6;
 }
+
+body > :not(header) {
+  max-width: 980px;
+  padding-inline: 16px;
+  margin-inline: auto;
+}
+
 header{
-    background-color: rgb(107, 106, 106);
-    width: 70;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  background: linear-gradient(180deg, #1f232b 0%, #181b20 100%);
+  color: #fff;
+  padding: 16px 20px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--stroke);
+  box-shadow: 0 10px 30px -10px var(--glow);
 }
+
 h1{
-     background-color: rgb(107, 106, 106);
-     width: 540;
+  margin: 28px auto 16px;
+  text-align: center;
+  background: var(--card);
+  border: 1px solid var(--stroke);
+  border-radius: 14px;
+  padding: 16px 22px;
+  font-size: clamp(1.15rem, 2.5vw, 1.6rem);
+  font-weight: 700;
 }
+
 .t{
- background-color: rgb(107, 106, 106);
- width: 130;
+  display: inline-block;
+  margin: 18px auto 10px;
+  padding: 8px 14px;
+  background: var(--card);
+  border: 1px solid var(--stroke);
+  color: var(--text);
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: .2px;
+  backdrop-filter: blur(4px);
+}
+
+iframe{
+  display: block;
+  width: min(100%, 900px);
+  aspect-ratio: 16 / 9;   /* Mantém proporção e ajusta a altura automaticamente */
+  height: auto;
+  border: 0;
+  border-radius: 16px;
+  box-shadow: 0 18px 40px var(--glow);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  border: 1px solid transparent;
+  margin: 10px auto 36px;
+}
+
+iframe:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 26px 60px rgba(0,0,0,.7);
+  border-color: var(--stroke);
+}
+
+:focus-visible {
+  outline: 2px solid #91c2ff;
+  outline-offset: 3px;
+}
+
+@media (max-width: 380px){
+  .t { font-size: .9rem; padding: 7px 12px; }
 }
